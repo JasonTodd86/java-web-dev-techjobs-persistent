@@ -19,7 +19,8 @@ public class EmployerController {
     @Autowired
     private EmployerRepository employerRepository;
 
-    @GetMapping("index")
+    //You NEED to have an empty string when you GetMap. It needs to have a default, otherwise you get an error. dummy.
+    @GetMapping("")
     public String index(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
@@ -35,6 +36,7 @@ public class EmployerController {
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
                                     Errors errors, Model model) {
         if (errors.hasErrors()) {
+            // TODO: add errors
             return "employers/add";
         }
         employerRepository.save(newEmployer);
@@ -54,4 +56,6 @@ public class EmployerController {
             return "redirect:../";
         }
     }
+    //If you're trying to view an employee's id page and it's not there, it will return you to the index so that you can view the employee ids that ARE available.
+
 }
