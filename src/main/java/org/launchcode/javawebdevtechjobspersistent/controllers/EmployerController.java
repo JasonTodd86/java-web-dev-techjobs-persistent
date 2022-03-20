@@ -34,14 +34,13 @@ public class EmployerController {
     @PostMapping("add")
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
                                     Errors errors, Model model) {
-        employerRepository.save(newEmployer);
         if (errors.hasErrors()) {
             return "employers/add";
-
         }
+        employerRepository.save(newEmployer);
         return "redirect:";
-
     }
+    //This (@Valid) checks for errors before the form is saved. If it's good, it redirects.
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {

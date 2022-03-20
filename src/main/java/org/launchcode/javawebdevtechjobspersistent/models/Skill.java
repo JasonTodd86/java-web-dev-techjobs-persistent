@@ -6,10 +6,11 @@ import javax.validation.constraints.Size;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @Size(min = 20, max = 50)
+    @Size(min = 3, max = 255)
     private String skillDescription;
 
     public Skill() {
     }
 
+    //Didn't add getters and setters because assignment didn't specify.
 }

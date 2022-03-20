@@ -13,4 +13,4 @@ import javax.transaction.Transactional;
 public interface EmployerRepository extends CrudRepository<Employer, Integer> {
 }
 
-//Employer Repository is a crud repository that takes employer and integer. It takes the generic crud and specifies it with these new types.
+//Employer Repository is a crud repository that takes "employer" and "integer". It takes the generic crud and specifies it with these new types.
