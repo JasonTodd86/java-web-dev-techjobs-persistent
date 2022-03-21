@@ -1,16 +1,26 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Skill extends AbstractEntity {
 
-    @Size(min = 3, max = 255)
+    @Size(max = 250)
+    @NotBlank(message = "Please provide a description.")
     private String skillDescription;
 
     public Skill() {
     }
 
-    //Didn't add getters and setters because assignment didn't specify.
+    //Didn't add getters and setters at first because assignment didn't specify. Added them after I kept getting errors that the template can't be parsed (skills/add.html).
+
+
+    public String getSkillDescription() {
+        return skillDescription;
+    }
+    public void setSkillDescription(String skillDescription) {
+        this.skillDescription = skillDescription;
+    }
 }
