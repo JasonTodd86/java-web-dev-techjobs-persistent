@@ -13,5 +13,8 @@ WHERE location = "St. Louis City";
 ## Part 3: Test it with SQL
 DROP TABLE job;
 
-
 ## Part 4: Test it with SQL
+SELECT DISTINCT id, name, skill_description
+FROM skill
+INNER JOIN job_skills ON job_skills.skills_id = skill.id
+ORDER BY name;
