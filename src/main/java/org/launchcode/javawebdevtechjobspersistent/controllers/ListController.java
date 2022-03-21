@@ -22,6 +22,8 @@ public class ListController {
     @Autowired
     private JobRepository jobRepository;
 
+
+
     static HashMap<String, String> columnChoices = new HashMap<>();
 
     public ListController () {
